@@ -1,19 +1,22 @@
-<template>
-  <h1>{{ msg }}</h1>
-  <button @click="count++">count is: {{ count }}</button>
-  <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
-</template>
-
 <script>
+import { h } from "vue";
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
+  name: "HelloWorld",
   data() {
     return {
-      count: 0
-    }
-  }
-}
+      title: "HelloWorld",
+      message: "This is sample message.",
+    };
+  },
+  render() {
+    return h(
+      "div",
+      {
+        class: "alert alert-warning",
+      },
+      [h("h2", this.title), h("p", this.message)]
+    );
+  },
+};
 </script>
